@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "tb_asset")
+@Table(name = "tb_assets")
 @Setter
 @Getter
 @NoArgsConstructor
@@ -19,6 +19,7 @@ public class Asset
     private Integer zipCode;
     private String address;
     private Integer addressNumber;
+    private Double assetValue;
     private String imgUrl;
     private String description;
 }
