@@ -20,6 +20,7 @@ public class Asset
     private String address;
     private Integer addressNumber;
     private Double assetValue;
+    private String assetUse;
     private String imgUrl;
     private String description;
 }

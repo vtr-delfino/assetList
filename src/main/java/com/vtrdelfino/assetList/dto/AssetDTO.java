@@ -14,6 +14,7 @@ public class AssetDTO
     private String address;
     private Integer addressNumber;
     private Double assetValue;
+    private String assetUse;
     private String imgUrl;
     private String description;
 
@@ -25,6 +26,7 @@ public class AssetDTO
         address = entity.getAddress();
         addressNumber = entity.getAddressNumber();
         assetValue = entity.getAssetValue();
+        assetUse = entity.getAssetUse();
         imgUrl = entity.getImgUrl();
         description = entity.getDescription();
     }
