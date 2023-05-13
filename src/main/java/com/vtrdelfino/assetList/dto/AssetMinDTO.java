@@ -1,6 +1,7 @@
 package com.vtrdelfino.assetList.dto;
 
 import com.vtrdelfino.assetList.entities.Asset;
+import com.vtrdelfino.assetList.projections.AssetMinProjection;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -21,5 +22,12 @@ public class AssetMinDTO
         assetValue = entity.getAssetValue();
         assetUse = entity.getAssetUse();
         imgUrl = entity.getImgUrl();
+    }
+
+    public AssetMinDTO(AssetMinProjection projection)
+    {
+        id = projection.getId();
+        title = projection.getTitle();
+        imgUrl = projection.getImgUrl();
     }
 }

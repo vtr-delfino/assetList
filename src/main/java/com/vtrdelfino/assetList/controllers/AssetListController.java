@@ -1,6 +1,5 @@
 package com.vtrdelfino.assetList.controllers;
 
-import com.vtrdelfino.assetList.dto.AssetDTO;
 import com.vtrdelfino.assetList.dto.AssetListDTO;
 import com.vtrdelfino.assetList.dto.AssetMinDTO;
 import com.vtrdelfino.assetList.services.AssetListService;
@@ -20,9 +19,18 @@ public class AssetListController
     @Autowired
     private AssetListService assetListService;
 
+    @Autowired
+    private AssetService assetService;
+
     @GetMapping
     public List<AssetListDTO> findAll()
     {
         return assetListService.findAll();
+    }
+
+    @GetMapping(value = "/{listId}/assets")
+    public List<AssetMinDTO> findByList(@PathVariable Long listId)
+    {
+        return assetService.findByList(listId);
     }
 }

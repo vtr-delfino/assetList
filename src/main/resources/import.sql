@@ -1,3 +1,5 @@
+-- noinspection SqlNoDataSourceInspectionForFile
+
 INSERT INTO tb_asset_list (name) VALUES ('Residencial')
 INSERT INTO tb_asset_list (name) VALUES ('Não Residencial')
 

@@ -3,6 +3,7 @@ package com.vtrdelfino.assetList.services;
 import com.vtrdelfino.assetList.dto.AssetDTO;
 import com.vtrdelfino.assetList.dto.AssetMinDTO;
 import com.vtrdelfino.assetList.entities.Asset;
+import com.vtrdelfino.assetList.projections.AssetMinProjection;
 import com.vtrdelfino.assetList.repositories.AssetRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,14 @@ public class AssetService
     public List<AssetMinDTO> findAll()
     {
         List<Asset> result = assetRepository.findAll();
+        return result.stream().map(AssetMinDTO::new).toList();
+    }
+
+
+    @Transactional(readOnly = true)
+    public List<AssetMinDTO> findByList(Long listId)
+    {
+        List<AssetMinProjection> result = assetRepository.searchByList(listId);
         return result.stream().map(AssetMinDTO::new).toList();
     }
 }
